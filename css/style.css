@@ -1,0 +1,541 @@
+/* =========================================================
+   FONTS
+   Paris2024 (variable weight) for headings, Poppins for body text.
+   @font-face makes them render correctly even on machines that
+   don't have these fonts installed.
+   ========================================================= */
+@font-face {
+    font-family: "Paris2024";
+    src: url("../media/05-fonts/Paris2024/Paris2024-Variable.ttf") format("truetype-variations"),
+         url("../media/05-fonts/Paris2024/Paris2024-Variable.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("../media/05-fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../media/05-fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../media/05-fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("../media/05-fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/* =========================================================
+   CENTRAL DESIGN TOKENS (Style Guide colors)
+   Change a value here and it updates everywhere on the site.
+   ========================================================= */
+:root {
+    --color-blue:        #002395;
+    --color-red:         #ED2939;
+    --color-light-blue:  #D5E2F0;
+    --color-dark-gray:   #333333;
+    --color-medium-gray: #474747;
+    --color-light-gray:  #888888;
+    --color-white:       #FFFFFF;
+
+    --font-heading: "Paris2024", cursive, sans-serif;
+    --font-body:    "Poppins", "Segoe UI", Arial, sans-serif;
+
+    --container-width: 1200px;
+    --radius-sm: 4px;
+
+    --transition-fast: 0.25s ease;
+}
+
+
+/* =========================================================
+   RESET / BASE
+   ========================================================= */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+    scroll-behavior: smooth; /* pure-CSS smooth scroll for nav anchor links */
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--color-dark-gray);
+    background: var(--color-white);
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin: 0;
+}
+
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { font-family: inherit; }
+
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Section title + the red/blue underline swoosh graphic (lines-titles.png) */
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    letter-spacing: 0.5px;
+    margin: 0 0 40px;
+    position: relative;
+    padding-bottom: 26px;
+}
+.section-title.no-margin { margin-bottom: 0; padding-bottom: 0; }
+.title-red  { color: var(--color-red); }
+.title-blue { color: var(--color-blue); }
+.section-title::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 22px;
+    background: url("../media/03-images/lines-titles.png") no-repeat center / contain;
+}
+.section-title.no-margin::after { display: none; }
+
+/* Reusable pagination arrows (prev/next svg buttons supplied in the design) */
+.arrow-btn {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+    line-height: 0;
+    transition: opacity var(--transition-fast);
+}
+.arrow-btn:hover { opacity: 0.7; }
+.arrow-btn.disabled { opacity: 0.35; cursor: not-allowed; }
+.arrow-btn img { width: 40px; height: 40px; }
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    margin-top: 40px;
+}
+.page-indicator { font-size: 0.9rem; color: var(--color-medium-gray); }
+.show-tablet, .show-mobile { display: none; }
+
+
+/* =========================================================
+   HEADER / NAVBAR
+   ========================================================= */
+.site-header { position: relative; }
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.logo img { height: 36px; width: auto; }
+
+.main-nav ul { display: flex; gap: 32px; }
+.main-nav a {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-dark-gray);
+    transition: color var(--transition-fast);
+}
+.main-nav a:hover { color: var(--color-blue); }
+
+/* Mobile burger: hidden on desktop */
+.nav-toggle { display: none; }
+.nav-burger { display: none; cursor: pointer; }
+.nav-burger img { width: 26px; height: 26px; }
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-top: 40px;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-light-blue); /* fallback while image loads */
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+}
+
+.hero-mascot {
+    position: absolute;
+    left: 4%;
+    bottom: 14%;
+    width: 220px;
+    height: auto;
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: right;
+    padding: 0 6% 40px;
+}
+.hero-content h1 {
+    font-size: 2.6rem;
+    line-height: 1.15;
+    color: var(--color-white);
+}
+.hero-logos {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-top: 24px;
+}
+.hero-logo img { width: 70px; height: auto; }
+
+.hero-slider-nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0 30px;
+}
+.dots { display: flex; gap: 8px; }
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ffffffaa;
+    border: 1px solid var(--color-dark-gray);
+}
+.dot.active { background: var(--color-dark-gray); }
+
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+.countdown-section { padding: 70px 0; text-align: center; }
+.countdown-sub { font-weight: 600; margin: 0; }
+.countdown-dates { color: var(--color-light-gray); margin: 4px 0 30px; }
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 14px;
+    margin-bottom: 40px;
+}
+.timer-block { display: flex; flex-direction: column; align-items: center; }
+.timer-num {
+    font-family: var(--font-heading);
+    font-size: 3.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+.timer-label { font-size: 0.8rem; color: var(--color-light-gray); margin-top: 4px; }
+.timer-colon { font-size: 2.4rem; color: var(--color-light-gray); transform: translateY(-10px); }
+.timekeeper-logo { height: 34px; width: auto; margin: 0 auto; }
+
+
+/* =========================================================
+   SHARED CARD GRID (Road to Paris / About the Games / Shop)
+   ========================================================= */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* Shared "zoom the image, not the card" hover effect */
+.zoom-media {
+    overflow: hidden;
+}
+.zoom-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-fast);
+}
+.zoom-media:hover img { transform: scale(1.08); }
+
+
+/* ---- Road to Paris ---- */
+.road-to-paris {
+    background: var(--color-light-blue);
+    padding: 70px 0;
+    clip-path: polygon(0 4%, 100% 0, 100% 96%, 0 100%);
+    margin-top: -40px;
+}
+.road-card {
+    background: var(--color-white);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    padding-bottom: 16px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+.road-card-image { aspect-ratio: 320 / 150; }
+.road-card-image, .road-card-image img { border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+.road-card-image { overflow: hidden; }
+.road-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-fast); }
+.road-card:hover .road-card-image img { transform: scale(1.08); }
+
+.road-card h3 { font-size: 1rem; margin: 20px 18px 8px; }
+.road-card p { font-size: 0.85rem; color: var(--color-medium-gray); margin: 0 18px 12px; line-height: 1.5; }
+.road-card .date {
+    font-size: 0.8rem;
+    color: var(--color-light-gray);
+    margin: 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+
+/* ---- About the Games ---- */
+.about-games { padding: 70px 0; text-align: center; }
+.about-card {
+    background: var(--color-light-blue);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    text-align: left;
+}
+.about-card-image { position: relative; aspect-ratio: 320 / 150; overflow: hidden; }
+.about-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-fast); }
+.about-card:hover .about-card-image img { transform: scale(1.08); }
+.about-tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--color-red);
+    color: var(--color-white);
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    padding: 6px 12px;
+}
+.about-card p {
+    font-size: 0.85rem;
+    color: var(--color-medium-gray);
+    margin: 0;
+    padding: 16px 18px 20px;
+    line-height: 1.5;
+}
+.about-emblem { width: 90px; height: auto; margin: 50px auto 0; }
+
+
+/* ---- Olympic Shop ---- */
+.olympic-shop { padding: 70px 0; }
+.shop-heading-row {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+.see-more {
+    font-size: 0.85rem;
+    text-decoration: underline;
+    color: var(--color-dark-gray);
+}
+.shop-card { text-align: left; }
+.shop-card-image {
+    border: 1px solid var(--color-light-blue);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    aspect-ratio: 290 / 180;
+}
+.shop-card-image img { width: 100%; height: 100%; object-fit: cover; transition: transform var(--transition-fast); }
+.shop-card:hover .shop-card-image img { transform: scale(1.06); }
+.shop-card h3 { font-size: 0.95rem; font-weight: 500; margin: 16px 0 12px; }
+.shop-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.buy-btn {
+    background: var(--color-dark-gray);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 18px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background var(--transition-fast);
+}
+.buy-btn:hover { background: var(--color-blue); }
+.price { font-weight: 600; }
+
+
+/* ---- Worldwide Partners ---- */
+.partners-section { padding: 70px 0; text-align: center; background: var(--color-light-blue); }
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px 24px;
+    align-items: center;
+}
+.partner-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+.partner-logo img { max-height: 40px; width: auto; }
+.partner-logo:hover { transform: scale(1.12); opacity: 0.85; }
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.site-footer { background: var(--color-dark-gray); color: var(--color-white); padding-top: 50px; }
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding-bottom: 40px;
+}
+.footer-col h4 { font-family: var(--font-body); font-weight: 500; font-size: 0.95rem; margin: 0 0 16px; }
+.footer-col-right { text-align: right; }
+.footer-col img { height: 40px; width: auto; }
+
+/* Two separately clickable regions cropped from one sprite image
+   (icons-app.png is 272x40: Google Play badge sits at x 0-135,
+   App Store badge sits at x 152-272). */
+.app-badges { display: flex; gap: 17px; }
+.badge-link {
+    display: block;
+    height: 40px;
+    background-image: url("../media/03-images/icons-app.png");
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+.badge-link:hover { opacity: 0.8; transform: translateY(-2px); }
+.badge-google { width: 135px; background-position: 0 0; }
+.badge-apple  { width: 120px; background-position: -152px 0; }
+
+/* Social icons: inlined SVG, each <a> wraps one icon so they're
+   individually clickable instead of one link over the whole row. */
+.social-icons { height: 24px; width: auto; }
+.social-icons a {
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+    transform-origin: center;
+}
+.social-icons a:hover { opacity: 0.7; transform: translateY(-2px); }
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 30px 0;
+    border-top: 1px solid #555;
+}
+.footer-logo { height: 60px; width: auto; }
+
+.copyright {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #bbb;
+    padding: 20px 0;
+    margin: 0;
+    border-top: 1px solid #555;
+}
+
+
+/* =========================================================
+   RESPONSIVE BREAKPOINTS
+   Desktop  : > 1024px  (base styles above)
+   Tablet   : 768px - 1024px -> 2 cards in Road to Paris / About
+   Mobile   : < 768px        -> 1 card, burger nav
+   ========================================================= */
+
+/* ---- Tablet ---- */
+@media (max-width: 1024px) {
+    .road-grid, .about-grid { grid-template-columns: repeat(2, 1fr); }
+    .shop-grid { grid-template-columns: repeat(2, 1fr); }
+    .partners-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .show-desktop { display: none; }
+    .show-tablet  { display: inline; }
+
+    .hero-content h1 { font-size: 2.1rem; }
+}
+
+/* ---- Mobile ---- */
+@media (max-width: 767px) {
+    .main-nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--color-white);
+        box-shadow: 0 8px 12px rgba(0,0,0,0.08);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-fast);
+        z-index: 5;
+    }
+    .main-nav ul { flex-direction: column; padding: 8px 24px; }
+    .main-nav ul li { padding: 12px 0; border-bottom: 1px solid #eee; }
+    .nav-burger { display: block; }
+    .nav-toggle:checked ~ .main-nav { max-height: 400px; }
+
+    .hero-content { text-align: center; padding: 0 6% 30px; }
+    .hero-content h1 { font-size: 1.6rem; }
+    .hero-logos { justify-content: center; }
+    .hero-mascot { width: 120px; left: 2%; bottom: 10%; }
+
+    .countdown-timer { gap: 8px; }
+    .timer-num { font-size: 2.2rem; }
+    .timer-colon { font-size: 1.6rem; }
+
+    .road-grid, .about-grid, .shop-grid { grid-template-columns: 1fr; }
+    .partners-grid { grid-template-columns: repeat(2, 1fr); }
+
+    .shop-heading-row { flex-direction: column; gap: 8px; }
+
+    .footer-top { flex-direction: column; text-align: center; }
+    .footer-col-right { text-align: center; }
+    .app-badges { justify-content: center; }
+    .footer-bottom { gap: 24px; }
+
+    .show-tablet  { display: none; }
+    .show-mobile  { display: inline; }
+}

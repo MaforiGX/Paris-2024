@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paris 2024 - The Olympic Games</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ============ HEADER : Navbar + Hero ============ -->
+    <header class="site-header" id="top">
+
+        <div class="header-bar">
+            <a href="#top" class="logo">
+                <img src="media/03-images/logo-black.png" alt="Paris 2024" width="150" height="43">
+            </a>
+
+            <!-- Pure-CSS mobile menu (no JS): checkbox + label trick -->
+            <input type="checkbox" id="nav-toggle" class="nav-toggle">
+            <label for="nav-toggle" class="nav-burger" aria-label="Open menu">
+                <img src="media/03-images/menuburger.svg" alt="">
+            </label>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#countdown">CountDown</a></li>
+                    <li><a href="#road-to-paris">Road to Paris</a></li>
+                    <li><a href="#about-games">About the Games</a></li>
+                    <li><a href="#olympic-shop">Olympic Shop</a></li>
+                    <li><a href="#partners">Worldwide Partners</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="hero">
+            <div class="hero-bg" style="background-image:url(media/03-images/hero-lg.png)"></div>
+
+            <picture>
+                <source media="(max-width: 767px)" srcset="media/03-images/mascot-sm.png">
+                <source media="(max-width: 1024px)" srcset="media/03-images/mascot-md.png">
+                <img class="hero-mascot" src="media/03-images/mascot-lg.png" alt="Paris 2024 mascot">
+            </picture>
+
+            <div class="hero-content">
+                <h1>The Olympics Games<br><span>of Paris 2024</span></h1>
+                <div class="hero-logos">
+                    <div class="hero-logo">
+                        <img src="media/03-images/logo-emblem.png" alt="Paris 2024 Olympics">
+                    </div>
+                    <div class="hero-logo">
+                        <img src="media/03-images/logo-emblem.png" alt="Paris 2024 Paralympics">
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-slider-nav">
+                <button class="arrow-btn img-btn" aria-label="Previous slide">
+                    <img src="media/03-images/btn-prev.svg" alt="">
+                </button>
+                <div class="dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="arrow-btn img-btn" aria-label="Next slide">
+                    <img src="media/03-images/btn-next.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ============ COUNTDOWN ============ -->
+    <section id="countdown" class="countdown-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-red">Count</span><span class="title-blue">Down</span>
+            </h2>
+
+            <p class="countdown-sub">Olympic Games Paris 2024</p>
+            <p class="countdown-dates">26 July - 11 August,</p>
+
+            <div class="countdown-timer">
+                <div class="timer-block"><span class="timer-num">28</span><span class="timer-label">Days</span></div>
+                <span class="timer-colon">:</span>
+                <div class="timer-block"><span class="timer-num">13</span><span class="timer-label">Hours</span></div>
+                <span class="timer-colon">:</span>
+                <div class="timer-block"><span class="timer-num">45</span><span class="timer-label">Minutes</span></div>
+                <span class="timer-colon">:</span>
+                <div class="timer-block"><span class="timer-num">05</span><span class="timer-label">Seconds</span></div>
+            </div>
+
+            <img src="media/03-images/logos-countdown.png" alt="Omega Official Timekeeper" class="timekeeper-logo">
+        </div>
+    </section>
+
+
+    <!-- ============ ROAD TO PARIS ============ -->
+    <section id="road-to-paris" class="road-to-paris">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-red">Road to</span> <span class="title-blue">Paris</span>
+            </h2>
+
+            <div class="cards-grid road-grid">
+
+                <article class="road-card">
+                    <div class="road-card-image">
+                        <img src="media/03-images/road-01.png" alt="2024 FIBA">
+                    </div>
+                    <h3>2024 FIBA</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <div class="date"><span class="cal-icon" aria-hidden="true">&#128197;</span> 02-05 May</div>
+                </article>
+
+                <article class="road-card">
+                    <div class="road-card-image">
+                        <img src="media/03-images/road-02.png" alt="2024 UWV">
+                    </div>
+                    <h3>2024 UWV</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <div class="date"><span class="cal-icon" aria-hidden="true">&#128197;</span> 08-12 May</div>
+                </article>
+
+                <article class="road-card">
+                    <div class="road-card-image">
+                        <img src="media/03-images/road-03.png" alt="2024 UIPM">
+                    </div>
+                    <h3>2024 UIPM</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <div class="date"><span class="cal-icon" aria-hidden="true">&#128197;</span> 09-12 May</div>
+                </article>
+
+                <article class="road-card">
+                    <div class="road-card-image">
+                        <img src="media/03-images/road-04.png" alt="2024 ISSF">
+                    </div>
+                    <h3>2024 ISSF</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                    <div class="date"><span class="cal-icon" aria-hidden="true">&#128197;</span> 14-27 May</div>
+                </article>
+
+            </div>
+
+            <!-- Page count differs per breakpoint (4 visible on desktop => 1/4,
+                 2 visible on tablet => 1/8, 1 visible on mobile => 1/16).
+                 Toggled purely by CSS media queries, no JS. -->
+            <div class="pagination">
+                <button class="arrow-btn img-btn disabled" aria-label="Previous articles">
+                    <img src="media/03-images/btn-prev.svg" alt="">
+                </button>
+                <span class="page-indicator">
+                    <span class="show-desktop">1/4</span>
+                    <span class="show-tablet">1/8</span>
+                    <span class="show-mobile">1/16</span>
+                </span>
+                <button class="arrow-btn img-btn" aria-label="Next articles">
+                    <img src="media/03-images/btn-next.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ ABOUT THE GAMES ============ -->
+    <section id="about-games" class="about-games">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-red">About</span> <span class="title-blue">the Games</span>
+            </h2>
+
+            <div class="cards-grid about-grid">
+
+                <article class="about-card">
+                    <div class="about-card-image">
+                        <img src="media/03-images/about-01.png" alt="Sports">
+                        <span class="about-tag">SPORTS</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="about-card-image">
+                        <img src="media/03-images/about-02.png" alt="Venues">
+                        <span class="about-tag">VENUES</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="about-card-image">
+                        <img src="media/03-images/about-03.png" alt="Celebrating the Games">
+                        <span class="about-tag">CELEBRATING THE GAMES</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </article>
+
+                <article class="about-card">
+                    <div class="about-card-image">
+                        <img src="media/03-images/about-04.png" alt="Spectator Information">
+                        <span class="about-tag">SPECTATOR INFORMATION</span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+                </article>
+
+            </div>
+
+            <div class="pagination">
+                <button class="arrow-btn img-btn disabled" aria-label="Previous items">
+                    <img src="media/03-images/btn-prev.svg" alt="">
+                </button>
+                <span class="page-indicator">
+                    <span class="show-desktop">1/1</span>
+                    <span class="show-tablet">1/2</span>
+                    <span class="show-mobile">1/4</span>
+                </span>
+                <button class="arrow-btn img-btn" aria-label="Next items">
+                    <img src="media/03-images/btn-next.svg" alt="">
+                </button>
+            </div>
+
+            <img src="media/03-images/logo-emblem.png" alt="Paris 2024" class="about-emblem">
+        </div>
+    </section>
+
+
+    <!-- ============ OLYMPIC SHOP ============ -->
+    <section id="olympic-shop" class="olympic-shop">
+        <div class="container">
+            <div class="shop-heading-row">
+                <h2 class="section-title no-margin">
+                    <span class="title-red">Olympic</span> <span class="title-blue">Shop</span>
+                </h2>
+                <a href="#" class="see-more">See more products</a>
+            </div>
+
+            <div class="cards-grid shop-grid">
+
+                <article class="shop-card">
+                    <div class="shop-card-image"><img src="media/03-images/shop-01.png" alt="Latin Crest T-Shirt - White"></div>
+                    <h3>Latin Crest T-Shirt- White</h3>
+                    <div class="shop-row">
+                        <button class="buy-btn">BUY NOW</button>
+                        <span class="price">&euro; 42</span>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-image"><img src="media/03-images/shop-02.png" alt="Logo Graphic T-Shirt - White"></div>
+                    <h3>Logo Graphic T-Shirt- White</h3>
+                    <div class="shop-row">
+                        <button class="buy-btn">BUY NOW</button>
+                        <span class="price">&euro; 45</span>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-image"><img src="media/03-images/shop-03.png" alt="Plush Mascot - 15cms"></div>
+                    <h3>Plush Mascot - 15 cms</h3>
+                    <div class="shop-row">
+                        <button class="buy-btn">BUY NOW</button>
+                        <span class="price">&euro; 25</span>
+                    </div>
+                </article>
+
+                <article class="shop-card">
+                    <div class="shop-card-image"><img src="media/03-images/shop-04.png" alt="Bobble Beanie"></div>
+                    <h3>Bobble Beanie</h3>
+                    <div class="shop-row">
+                        <button class="buy-btn">BUY NOW</button>
+                        <span class="price">&euro; 35</span>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="pagination">
+                <button class="arrow-btn img-btn disabled" aria-label="Previous products">
+                    <img src="media/03-images/btn-prev.svg" alt="">
+                </button>
+                <span class="page-indicator">
+                    <span class="show-desktop">1/3</span>
+                    <span class="show-tablet">1/6</span>
+                    <span class="show-mobile">1/12</span>
+                </span>
+                <button class="arrow-btn img-btn" aria-label="Next products">
+                    <img src="media/03-images/btn-next.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ WORLDWIDE PARTNERS ============ -->
+    <section id="partners" class="partners-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-red">Worldwide</span> <span class="title-blue">Partners</span>
+            </h2>
+
+            <div class="partners-grid">
+                <div class="partner-logo"><img src="media/03-images/partners/partner-01.png" alt="Visa"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-02.png" alt="Airbnb"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-03.png" alt="Atos"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-04.png" alt="Coca-Cola"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-05.png" alt="Corona"></div>
+
+                <div class="partner-logo"><img src="media/03-images/partners/partner-06.png" alt="Samsung"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-07.png" alt="Alibaba"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-08.png" alt="Bridgestone"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-09.png" alt="Deloitte"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-10.png" alt="P&amp;G"></div>
+
+                <div class="partner-logo"><img src="media/03-images/partners/partner-11.png" alt="Toyota"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-12.png" alt="Allianz"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-13.png" alt="Omega"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-14.png" alt="Panasonic"></div>
+                <div class="partner-logo"><img src="media/03-images/partners/partner-15.png" alt="Intel"></div>
+            </div>
+
+            <div class="pagination">
+                <button class="arrow-btn img-btn disabled" aria-label="Previous partners">
+                    <img src="media/03-images/btn-prev.svg" alt="">
+                </button>
+                <span class="page-indicator">1/5</span>
+                <button class="arrow-btn img-btn" aria-label="Next partners">
+                    <img src="media/03-images/btn-next.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="site-footer">
+        <div class="container footer-top">
+            <div class="footer-col">
+                <h4>Download the Official App</h4>
+                <!-- One PNG holds both badges; each <a> is a fixed-size "window"
+                     onto it (background-position technique, same idea as the
+                     sprite-sheet steps() animation from Task 4). -->
+                <div class="app-badges">
+                    <a href="#" class="badge-link badge-google" aria-label="Get it on Google Play"></a>
+                    <a href="#" class="badge-link badge-apple" aria-label="Download on the App Store"></a>
+                </div>
+            </div>
+            <div class="footer-col footer-col-right">
+                <h4>Follow us on</h4>
+                <!-- Inlined so each icon can be its own clickable <a>, instead of
+                     one link covering the whole combined image. -->
+                <svg class="social-icons" width="246" height="30" viewBox="0 0 246 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <a href="#" aria-label="Facebook">
+                        <g clip-path="url(#clip0_12_75)">
+                            <path d="M24.9267 13.8822L24.9151 13.8807L24.8361 13.8704H20.5656V11.0632C20.5656 10.4238 20.6543 9.89007 20.9691 9.51593C21.2835 9.14223 21.8259 8.92505 22.7403 8.92505H25.0765H25.0803V8.91332H25.092V4.96823H25.1677L25.0818 4.95662C24.6755 4.90169 23.2892 4.78101 21.6726 4.78101C19.9848 4.78101 18.5621 5.2964 17.5613 6.28574C16.5603 7.27512 15.9828 8.73723 15.9828 10.6281V13.8704H12.181V13.8822H12.1693V18.299H12.181V18.3107H15.9828V29.6142H1.545C0.904316 29.6142 0.386719 29.0967 0.386719 28.4559V1.54598C0.386719 0.905293 0.904316 0.387695 1.545 0.387695H28.455C29.0956 0.387695 29.6133 0.905293 29.6133 1.54598V28.4559C29.6133 29.0967 29.0956 29.6142 28.455 29.6142H20.5656V18.3069H24.3564V18.3867L24.368 18.2967L24.9384 13.8837L24.9267 13.8822Z" fill="white" stroke="white" stroke-width="0.015625"/>
+                        </g>
+                    </a>
+                    <a href="#" aria-label="X (Twitter)">
+                        <g clip-path="url(#clip1_12_75)">
+                            <path d="M72.3726 12.792L81.6566 2H79.4566L71.3953 11.3705L64.9567 2H57.5306L67.2669 16.1699L57.5306 27.4869H59.7307L68.2437 17.5913L75.0433 27.4869H82.4694L72.372 12.792H72.3726ZM69.3592 16.2947L68.3727 14.8837L60.5235 3.65624H63.9028L70.2372 12.7172L71.2237 14.1282L79.4577 25.906H76.0784L69.3592 16.2953V16.2947Z" fill="white" stroke="black" stroke-width="0.000216483"/>
+                        </g>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <path d="M125.006 8.26172C121.279 8.26172 118.273 11.2676 118.273 14.9941C118.273 18.7207 121.279 21.7266 125.006 21.7266C128.732 21.7266 131.738 18.7207 131.738 14.9941C131.738 11.2676 128.732 8.26172 125.006 8.26172ZM125.006 19.3711C122.598 19.3711 120.629 17.4082 120.629 14.9941C120.629 12.5801 122.592 10.6172 125.006 10.6172C127.42 10.6172 129.383 12.5801 129.383 14.9941C129.383 17.4082 127.414 19.3711 125.006 19.3711ZM133.584 7.98633C133.584 8.85938 132.881 9.55664 132.014 9.55664C131.141 9.55664 130.443 8.85352 130.443 7.98633C130.443 7.11914 131.146 6.41602 132.014 6.41602C132.881 6.41602 133.584 7.11914 133.584 7.98633ZM138.04 9.58008C137.943 7.47656 137.463 5.61328 135.922 4.07812C134.387 2.54297 132.523 2.0625 130.42 1.95703C128.252 1.83398 121.754 1.83398 119.586 1.95703C117.488 2.05664 115.625 2.53711 114.084 4.07227C112.543 5.60742 112.068 7.4707 111.963 9.57422C111.84 11.7422 111.84 18.2402 111.963 20.4082C112.062 22.5117 112.543 24.375 114.084 25.9102C115.625 27.4453 117.482 27.9258 119.586 28.0312C121.754 28.1543 128.252 28.1543 130.42 28.0312C132.523 27.9316 134.387 27.4512 135.922 25.9102C137.457 24.375 137.938 22.5117 138.043 20.4082C138.166 18.2402 138.166 11.748 138.04 9.58008ZM135.242 22.7344C134.785 23.8828 133.9 24.7676 132.746 25.2305C131.018 25.916 126.916 25.7578 125.006 25.7578C123.096 25.7578 118.988 25.9102 117.266 25.2305C116.117 24.7734 115.232 23.8887 114.77 22.7344C114.084 21.0059 114.242 16.9043 114.242 14.9941C114.242 13.084 114.09 8.97656 114.77 7.25391C115.227 6.10547 116.111 5.2207 117.266 4.75781C118.994 4.07227 123.096 4.23047 125.006 4.23047C126.916 4.23047 131.023 4.07812 132.746 4.75781C133.895 5.21484 134.779 6.09961 135.242 7.25391C135.928 8.98242 135.77 13.084 135.77 14.9941C135.77 16.9043 135.928 21.0117 135.242 22.7344Z" fill="white"/>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <path d="M193.628 8.12932C193.301 6.89755 192.337 5.92745 191.113 5.59823C188.895 5 180 5 180 5C180 5 171.105 5 168.887 5.59823C167.663 5.9275 166.699 6.89755 166.372 8.12932C165.778 10.362 165.778 15.0202 165.778 15.0202C165.778 15.0202 165.778 19.6784 166.372 21.9111C166.699 23.1429 167.663 24.0726 168.887 24.4018C171.105 25 180 25 180 25C180 25 188.895 25 191.113 24.4018C192.337 24.0726 193.301 23.1429 193.628 21.9111C194.222 19.6784 194.222 15.0202 194.222 15.0202C194.222 15.0202 194.222 10.362 193.628 8.12932ZM177.091 19.2495V10.7909L184.525 15.0203L177.091 19.2495Z" fill="white"/>
+                    </a>
+                    <a href="#" aria-label="TikTok">
+                        <path d="M242.763 6.41593C242.561 6.31128 242.364 6.19656 242.173 6.0722C241.617 5.705 241.108 5.27233 240.656 4.78351C239.525 3.4892 239.102 2.17614 238.947 1.25681H238.953C238.823 0.493725 238.877 0 238.885 0H233.733V19.9228C233.733 20.1902 233.733 20.4546 233.721 20.7158C233.721 20.7483 233.718 20.7783 233.716 20.8133C233.716 20.8277 233.716 20.8427 233.713 20.8577V20.869C233.659 21.5838 233.43 22.2743 233.046 22.8798C232.662 23.4853 232.135 23.9872 231.512 24.3413C230.862 24.7109 230.128 24.9047 229.38 24.9038C226.98 24.9038 225.034 22.9464 225.034 20.529C225.034 18.1116 226.98 16.1542 229.38 16.1542C229.835 16.1538 230.286 16.2253 230.718 16.3661L230.725 11.1201C229.413 10.9506 228.08 11.0549 226.811 11.4262C225.542 11.7975 224.363 12.4279 223.35 13.2775C222.462 14.049 221.715 14.9697 221.144 15.998C220.926 16.3729 220.106 17.8797 220.006 20.3252C219.944 21.7133 220.361 23.1513 220.559 23.7457V23.7582C220.684 24.1082 221.169 25.3025 221.958 26.3093C222.595 27.1169 223.347 27.8264 224.19 28.4148V28.4023L224.202 28.4148C226.697 30.1097 229.462 29.9985 229.462 29.9985C229.941 29.9791 231.544 29.9985 233.366 29.1354C235.386 28.1786 236.535 26.753 236.535 26.753C237.27 25.9013 237.854 24.9305 238.263 23.8826C238.729 22.657 238.885 21.1871 238.885 20.5996V10.0301C238.947 10.0676 239.78 10.6182 239.78 10.6182C239.78 10.6182 240.979 11.3869 242.85 11.8875C244.193 12.2438 246.001 12.3188 246.001 12.3188V7.20402C245.368 7.27276 244.081 7.07277 242.763 6.41593Z" fill="white"/>
+                    </a>
+                    <defs>
+                        <clipPath id="clip0_12_75"><rect width="30" height="30" fill="white"/></clipPath>
+                        <clipPath id="clip1_12_75"><rect width="30" height="25.5" fill="white" transform="translate(55 2)"/></clipPath>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <img src="media/03-images/logos-white.png" alt="Paris 2024" class="footer-logo">
+            <img src="media/03-images/logos-white.png" alt="Paris 2024 Paralympics" class="footer-logo">
+        </div>
+
+        <p class="copyright">&copy; Copyright 2024. All rights reserved</p>
+    </footer>
+
+</body>
+</html>
